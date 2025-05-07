@@ -1,0 +1,42 @@
+import pandas as pd
+import numpy as np
+df = pd.read_csv("/content/sample_data/StudentsPerformance.csv")
+df
+df.isnull().sum()
+df.dropna()
+math_score_mean = df["math score"].mean()
+df["math score"] = df["math score"].fillna(math_score_mean)
+df
+df.boxplot()
+newdf = df[df["math score"] > 30]
+newdf
+newdf.boxplot()
+df["math score"].plot(kind="kde")
+df["math score"] = df["math score"]*df["math score"]
+df["math score"].hist()
+
+//
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+dataset = [12,35,40,60,70,80,25,41,20,30,145,55,68,75,56,150]
+sorted(dataset)
+quantile1, quantile3 = np.percentile(dataset, [25,75])
+print(quantile1, quantile3)
+iqr_value = (quantile3 - quantile1)
+print(iqr_value)
+lower_bound_value = quantile1 - (1.5*iqr_value)
+upper_bound_value = quantile3 + (1.5*iqr_value)
+print(lower_bound_value, upper_bound_value)
+outlier =[]
+for x in dataset:
+if ((x> upper_bound_value) or (x<lower_bound_value)):
+outlier.append(x)
+print(' outlier in the dataset is', outlier)
+     
+
+
+
+
+
+     
