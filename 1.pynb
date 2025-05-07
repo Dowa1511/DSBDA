@@ -1,0 +1,30 @@
+
+import pandas as pd
+df = pd.read_csv("/content/sample_data/StudentsPerformance.csv")
+df
+df.isnull()
+df.isnull().sum()
+df.notnull()
+df.notnull().sum()
+df.describe()
+df.size
+df.ndim
+df.shape
+df.info()
+df = df.dropna()
+df
+df["writing score"] = df["writing score"].astype(int)
+df
+df["gender"].replace({"female":0,"male":1}, inplace=True)
+df
+//df.dtypes
+y = df.iloc[:, 0:1]
+print(y)
+from sklearn.preprocessing import LabelEncoder
+le = LabelEncoder()
+y = le.fit_transform(y)
+print(y)
+print(df['race/ethnicity'].value_counts())
+
+
+     
