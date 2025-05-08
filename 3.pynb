@@ -1,4 +1,4 @@
-import numpy
+//import numpy
 age = [99,86,87,88,111,86,103,87,94,78,77,85,86]
 x = numpy.mean(age)
 print(x)
@@ -69,3 +69,18 @@ print (data[virginica].describe())
 
 data.describe()
 [12]: data.info()
+
+
+//mode calc
+//mode calc
+def mode(data):
+    counts = {}
+    for item in data:
+        counts[item] = counts.get(item, 0) + 1
+    return max(counts, key=counts.get)
+
+# Example:
+data = [1, 2, 2, 3, 4, 4, 4, 5]
+print("Mode:", mode(data))
+
+
